@@ -43,4 +43,73 @@ class Canvas {
     this.addaBook(newbook);
   }
 
+  //changes read status upon clicking status button
+  stati(d) {
+    const i = lib.findIndex(function (bk, i) {
+      return bk.id === d;
+    })
+    const buk = lib[i];
+    buk.togglestat();
+    this.clearPage();
+    this.adder(lib);
+  }
 
+  //deletes book from library, clears page and adds to page
+  deleBook(rowid) {
+    const pp = lib.findIndex(function (bk, pp) {
+      return bk.id === rowid;
+    })
+    lib.splice(pp, 1);
+    this.clearPage();
+    this.adder(lib); //add lib to page ==============>
+  }
+
+  //clears
+  clearPage() {
+    var tebo = document.querySelector('#dtable');
+    while (tebo.rows.length > 0) {
+      tebo.deleteRow(0);
+    }
+  }
+
+  adder(lb) {
+    lb.forEach(bb => {
+      this.addtoPage(bb);
+    });
+  }
+
+  //adds a book to the page
+  addtoPage(b) {
+    var tb = document.querySelector('#tb');
+    var tr = document.createElement('tr');
+    tr.innerHTML = `
+			<td>${b.id}</td>
+			<td>${b.author}</td>
+			<td>${b.title}</td>
+			<td>${b.pages}</td>
+			<td><input type="button" onclick="statchange(${b.id})"
+				value="${b.status}"></td>
+			<td><input type="button" onclick="dell(${b.id})"
+				value="delete"> </td>
+			`;
+    tb.append(tr);
+  }
+}
+
+var lib = [];
+var iid = 0;
+let libone = new Canvas(lib);
+document.querySelector('#adder').addEventListener('click', addtolibc);
+
+function addtolibc(e) {
+  e.preventDefault();
+  libone.addtolib();
+}
+
+function dell(rwid) {
+  libone.deleBook(rwid);
+}
+
+function statchange(id) {
+  libone.stati(id);
+}
