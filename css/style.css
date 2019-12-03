@@ -5,6 +5,6 @@ body {
 	background-color: rgb(63, 62, 65);
 }
 
-h5 {
+h5, label,tbody {
 	color: rgb(248, 38, 38);
 }
