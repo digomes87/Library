@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <meta charset="utf-8">
@@ -11,21 +12,50 @@
   <link rel="stylesheet" href="css/skeleton.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-	<div class="container">
-      <h5>List Of Books</h5>
-      <h5>Title Of Book and Details:</h5>
+  <div class="container">
+    <h5>List Of Books</h5>
+    <h5>Title Of Book and Details:</h5>
 
-      <div class="row">
-        <form>
-        </form>
-      </div>
+    <div class="row">
+      <form>
+        <div class="three columns">
+          <label for="authorIn">Author</label>
+          <input class="u-full-width" type="text" placeholder="author" id="authorIn">
+        </div>
 
-      <div class="row">
-        <button type="submit" class="button-primary" id="adder">Add Book</button>
-      </div>
+        <div class="five columns">
+          <label for="titleIn">Book Title</label>
+          <input class="u-full-width" type="text" placeholder="Enter Title" id="titleIn">
+        </div>
 
+        <div class="two columns">
+          <label for="pagesIn">pages</label>
+          <input class="u-full-width" type="text" placeholder="pages" id="pagesIn">
+        </div>
+
+        <div class="two columns">
+          <label for="red">status</label>
+          <select class="u-full-width" id="redIn">
+            <option value="Read">| Read |</option>
+            <option value="Not Read">Not read</option>
+          </select>
+        </div>
+      </form>
+    </div>
+
+    <div class="row">
+      <button type="submit" class="button-primary" id="adder">Add Book</button>
+    </div>
+    <div class="row">
+	    	<table class="u-full-width" id="dtable">
+	   	      <tbody id="tb">	    	  	    	   
+	    	  </tbody>
+	    	</table>
+	    </div>
   </div>
 </body>
-<script src="js/main.js"></script>	
+<script src="js/main.js"></script>
+
 </html>
