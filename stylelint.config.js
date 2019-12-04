@@ -85,6 +85,11 @@ module.exports = {
       except: ["first-nested"],
       ignore: ["after-comment"],
     } ],
+    "extends": "stylelint-config-recommended",
+    "ignoreFiles": [
+        "css/normalize.css",
+        "css/skeleton.css",        
+    ],
     "selector-attribute-brackets-space-inside": "never",
     "selector-attribute-operator-space-after": "never",
     "selector-attribute-operator-space-before": "never",
@@ -105,4 +110,5 @@ module.exports = {
     "value-list-comma-space-before": "never",
     "value-list-max-empty-lines": 0,
   },
+  
 }
