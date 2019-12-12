@@ -1,5 +1,3 @@
-
-//The book class
 class Book {
   constructor(title, author, pages, status, id) {
     this.id = id;
@@ -9,18 +7,16 @@ class Book {
     this.status = status;
   }
 
-  togglestat() {
+  toggleStat() {
     if (this.status == "Read") {
       (this.status = "Not Read")
     } else {
       this.status = "Read";
     }
-    // this.cleardrow(lib); 
   }
 }
 
-// The Canvas class initialises a library
-class Canvas {
+class render {
   constructor(library) {
     this.library = library;
   }
@@ -49,7 +45,7 @@ class Canvas {
       return bk.id === d;
     })
     const buk = lib[i];
-    buk.togglestat();
+    buk.toggleStat();
     this.clearPage();
     this.adder(lib);
   }
@@ -61,7 +57,7 @@ class Canvas {
     })
     lib.splice(pp, 1);
     this.clearPage();
-    this.adder(lib); //add lib to page ==============>
+    this.adder(lib);
   }
 
   //clears
@@ -96,9 +92,9 @@ class Canvas {
   }
 }
 
-var lib = [];
-var iid = 0;
-let libone = new Canvas(lib);
+let lib = [];
+let iid = 0;
+let libone = new render(lib);
 document.querySelector('#adder').addEventListener('click', addtolibc);
 
 function addtolibc(e) {
@@ -108,8 +104,4 @@ function addtolibc(e) {
 
 function dell(rwid) {
   libone.deleBook(rwid);
-}
-
-function statchange(id) {
-  libone.stati(id);
 }
